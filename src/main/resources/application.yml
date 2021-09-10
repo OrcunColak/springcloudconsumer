@@ -1,0 +1,17 @@
+
+server:
+  port: 9001
+
+spring:
+  cloud:
+    stream:
+      function:
+        definition: fizzBuzzConsumer
+
+      bindings:
+        fizzBuzzConsumer-in-0:
+          destination: testtopic
+      kafka:
+        binder:
+          brokers: localhost:29092
+          auto-create-topics: true
